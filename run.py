@@ -5,18 +5,15 @@ Created on Tue Feb 20 15:56:24 2024
 @author: jetth
 """
 
-from sqlite3 import connect
-from flask import Flask, send_from_directory, g
-import jinja2
-from os.path import exists
+from flask import Flask, g
 from views.home import home
 from views.update import update
 from views.add import add
 import database
-import sqlite3
+
 
 app = Flask(__name__)
-app.debug = True;
+app.debug = False;
 
 @app.teardown_appcontext
 def close_connection(exception):

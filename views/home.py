@@ -6,7 +6,7 @@ Created on Tue Feb 20 16:02:54 2024
 """
 
 import database
-from flask import Blueprint, render_template, abort, request, make_response, redirect, Response;
+from flask import Blueprint, render_template, abort, request
 from jinja2 import TemplateNotFound;
 
 home = Blueprint("home", __name__, url_prefix="/");

@@ -5,7 +5,7 @@ Created on Wed Feb 28 12:57:26 2024
 @author: jetth
 """
 
-from flask import Blueprint, render_template, abort, request, make_response, redirect, Response;
+from flask import Blueprint, render_template, abort, request
 from jinja2 import TemplateNotFound;
 import database;
 
@@ -65,14 +65,14 @@ def result():
                 db.commit();
                 
                 responseHeader = "Success";
-                responseBody = "The entry was added to the database."    
+                responseBody = "The entry was successfully updated."    
             #end if
         else:
             cursor.execute("UPDATE data SET name=@0, id=@1, points=@2 WHERE name=@3 AND id=@4 AND points=@5", (name, iden, points, oldName, oldIden, oldPoints));
             db.commit();
             
             responseHeader = "Success";
-            responseBody = "The entry was added to the database." 
+            responseBody = "The entry was successfully updated." 
         #end if
         
         cursor.close();

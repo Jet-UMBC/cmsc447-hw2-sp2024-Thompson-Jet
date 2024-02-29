@@ -5,7 +5,7 @@ Created on Thu Feb 29 14:39:00 2024
 @author: jetth
 """
 
-from flask import Flask, send_from_directory, g
+from flask import g
 import sqlite3;
 
 def GetDatabase():

@@ -5,7 +5,7 @@ Created on Wed Feb 28 15:48:28 2024
 @author: jetth
 """
 
-from flask import Blueprint, render_template, abort, request, make_response, redirect, Response;
+from flask import Blueprint, render_template, abort, request
 from jinja2 import TemplateNotFound;
 import database;
 
