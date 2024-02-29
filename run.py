@@ -11,12 +11,12 @@ import jinja2
 from os.path import exists
 from views.home import home
 from views.update import update
+from views.add import add
+import database
+import sqlite3
 
 app = Flask(__name__)
-
-def GetDatabase():
-    pass;
-#end GetDatabase()
+app.debug = True;
 
 @app.teardown_appcontext
 def close_connection(exception):
@@ -29,7 +29,9 @@ def close_connection(exception):
 
 app.register_blueprint(home)
 app.register_blueprint(update)
+app.register_blueprint(add)
 
 if __name__ == '__main__':
     # application
+    database.InitDatabase();
     app.run(port=8000, threaded=True)
